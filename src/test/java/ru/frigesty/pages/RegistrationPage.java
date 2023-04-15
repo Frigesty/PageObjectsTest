@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
-
 public class RegistrationPage {
 
     CalendarComponent calendarComponent = new CalendarComponent();
@@ -28,7 +27,6 @@ public class RegistrationPage {
                          cityInput = $("#city"),
                     stateCityInput = $("#stateCity-wrapper"),
                        submitInput = $("#submit");
-
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");

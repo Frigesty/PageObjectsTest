@@ -7,7 +7,6 @@ public class HomeTest extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
-
     @Test
     void practiceFormTest() {
 

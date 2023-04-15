@@ -15,5 +15,4 @@ public class ResultsModal {
     public void verifyResult(String key, String value){
         $(".table-responsive").$(byText(key)).sibling(0).shouldHave(text(value));
     }
-
 }
