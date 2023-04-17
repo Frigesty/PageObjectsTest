@@ -109,7 +109,6 @@ public class RegistrationPage {
 
     public void clickSubmit(){
         submitInput.click();
-
     }
 
     public RegistrationPage verifyRegistrationResultsModalAppears(){
