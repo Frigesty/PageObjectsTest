@@ -13,7 +13,7 @@ public class RegistrationPageTextBox {
                    userEmailInput = $("#userEmail"),
               currentAddressInput = $("#currentAddress"),
             permanentAddressInput = $("#permanentAddress"),
-                      submitInput = $("#submit");
+                     submitButton = $("#submit");
 
     public RegistrationPageTextBox openPageName() {
         open("/text-box");
@@ -46,7 +46,7 @@ public class RegistrationPageTextBox {
     }
 
     public void setSubmit() {
-        submitInput.click();
+        submitButton.click();
     }
 
     public RegistrationPageTextBox verifyResultTextBox(String key, String value){

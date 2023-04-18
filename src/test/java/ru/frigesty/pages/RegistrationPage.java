@@ -16,20 +16,25 @@ public class RegistrationPage {
     SelenideElement firstNameInput = $("#firstName"),
                      lastNameInput = $("#lastName"),
                     userEmailInput = $("#userEmail"),
-                       genderInput = $("#genterWrapper"),
+                     genderWrapper = $("#genterWrapper"),
                        numberInput = $("#userNumber"),
                          dateInput = $("#dateOfBirthInput"),
                      subjectsInput = $("#subjectsContainer input"),
-                      hobbiesInput = $("#hobbiesWrapper"),
-                      pictureInput = $("#uploadPicture"),
+                    hobbiesWrapper = $("#hobbiesWrapper"),
+                     uploadPicture = $("#uploadPicture"),
                       addressInput = $("#currentAddress"),
                         stateInput = $("#state"),
                          cityInput = $("#city"),
-                    stateCityInput = $("#stateCity-wrapper"),
-                       submitInput = $("#submit");
+                  stateCityWrapper = $("#stateCity-wrapper"),
+                      submitButton = $("#submit");
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
+
+        return this;
+    }
+
+    public RegistrationPage removeFooter() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
@@ -54,40 +59,40 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage genderName(String value){
-        genderInput.$(byText(value)).click();
+    public RegistrationPage chooseGender(String value){
+        genderWrapper.$(byText(value)).click();
 
         return this;
     }
 
-    public RegistrationPage mobileName(String value){
+    public RegistrationPage userMobileNumber(String value){
         numberInput.setValue(value);
 
         return this;
     }
 
-    public RegistrationPage dateBirthDate(String day, String month, String year){
+    public RegistrationPage chooseBirthDate(String day, String month, String year){
         dateInput.click();
         calendarComponent.setDate(day,month,year);
 
         return this;
     }
 
-    public RegistrationPage setSubjectName(String value){
+    public RegistrationPage writeAndChooseSubject(String value){
         subjectsInput.setValue(value).pressEnter();
 
         return this;
     }
 
-    public RegistrationPage setHobbiesName(String firstHobbies, String secondHobbies){
-        hobbiesInput.$(byText(firstHobbies)).click();
-        hobbiesInput.$(byText(secondHobbies)).click();
+    public RegistrationPage chooseHobbies(String firstHobbies, String secondHobbies){
+        hobbiesWrapper.$(byText(firstHobbies)).click();
+        hobbiesWrapper.$(byText(secondHobbies)).click();
 
         return this;
     }
 
-    public RegistrationPage setPictureName(String value){
-        pictureInput.uploadFromClasspath(value);
+    public RegistrationPage uploadPicture(String value){
+        uploadPicture.uploadFromClasspath(value);
 
         return this;
     }
@@ -98,17 +103,17 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setStateCityName(String state, String city){
+    public RegistrationPage chooseStateAndCity(String state, String city){
         stateInput.click();
-        stateCityInput.$(byText(state)).click();
+        stateCityWrapper.$(byText(state)).click();
         cityInput.click();
-        stateCityInput.$(byText(city)).click();
+        stateCityWrapper.$(byText(city)).click();
 
         return this;
     }
 
     public void clickSubmit(){
-        submitInput.click();
+        submitButton.click();
     }
 
     public RegistrationPage verifyRegistrationResultsModalAppears(){

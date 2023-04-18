@@ -11,17 +11,18 @@ public class HomeTest extends TestBase {
     void practiceFormTest() {
 
         registrationPage.openPage()
+                        .removeFooter()
                         .setFirstName("Airat")
                         .setLastName("Karimov")
                         .userEmailName("test@test.ru")
-                        .genderName("Male")
-                        .mobileName("9991111000")
-                        .dateBirthDate("02", "August", "1996")
-                        .setSubjectName("Maths")
-                        .setHobbiesName("Sports", "Music")
-                        .setPictureName("duck.jpg")
+                        .chooseGender("Male")
+                        .userMobileNumber("9991111000")
+                        .chooseBirthDate("02", "August", "1996")
+                        .writeAndChooseSubject("Maths")
+                        .chooseHobbies("Sports", "Music")
+                        .uploadPicture("duck.jpg")
                         .setAddressName("5212 CHURCH AVE BROOKLYN NY 11203-3555 USA")
-                        .setStateCityName("NCR", "Delhi")
+                        .chooseStateAndCity("NCR", "Delhi")
                         .clickSubmit();
 
         registrationPage.verifyRegistrationResultsModalAppears()
